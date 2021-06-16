@@ -5,7 +5,7 @@ prerequisites:
 
 .PHONY install:
 install: prerequisites
-	@/bin/cp -f "ax25.service" "/lib/systemd/system/"
+	@/bin/cp -f "ax25.service" "/etc/systemd/system/"
 	@/bin/cp -f "axup" "/usr/sbin/"
 	@/bin/chmod +x "/usr/sbin/axup"
 	@/bin/cp -f "axdown" "/usr/sbin"
@@ -27,7 +27,7 @@ uninstall:
 	@service ax25 stop
 	@systemctl disable ax25
 	@systemctl daemon-reload
-	@/bin/rm "/lib/systemd/system/ax25.service"
+	@/bin/rm "/etc/systemd/system/ax25.service"
 	@/bin/rm "/usr/sbin/axup"
 	@/bin/rm "/usr/sbin/axdown"
 	@/bin/rm "/etc/default/ax25"
