@@ -17,7 +17,7 @@ HBAUD=1200
 IPADDR=
 
 # The TNC serial path.
-DEV=/dev/ttyUSB0
+DEV=/dev/tncx
 
 # Initializing the TNC into KISS mode. Uncomment the line matching your TNC
 #

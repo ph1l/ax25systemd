@@ -2,6 +2,10 @@
 Description=AX.25 KISS interface
 After=network.target
 
+# When triggering via udev rules, this unit feature stops the service
+# when the device is removed from the system
+StopWhenUnneeded=yes
+
 [Service]
 EnvironmentFile=/etc/default/ax25
 Type=forking
