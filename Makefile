@@ -18,14 +18,12 @@ install: prerequisites
 	@/bin/chmod +x "/usr/local/share/kissinit/ej50u"
 	@#
 	@systemctl daemon-reload
-	@systemctl enable ax25
 	@echo " "
 	@echo "Installed. Edit /etc/default/ax25 and /etc/ax25/axports if needed. When done editing those files, run \"service ax25 start\" to start the service"
 
 .PHONY uninstall:
 uninstall:
 	@service ax25 stop
-	@systemctl disable ax25
 	@systemctl daemon-reload
 	@/bin/rm "/etc/systemd/system/ax25.service"
 	@/bin/rm "/usr/local/sbin/axup"
