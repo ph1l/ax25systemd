@@ -6,16 +6,16 @@ prerequisites:
 .PHONY install:
 install: prerequisites
 	@/bin/cp -f "ax25.service" "/etc/systemd/system/"
-	@/bin/cp -f "axup" "/usr/sbin/"
-	@/bin/chmod +x "/usr/sbin/axup"
-	@/bin/cp -f "axdown" "/usr/sbin"
-	@/bin/chmod +x "/usr/sbin/axdown"
+	@/bin/cp -f "axup" "/usr/local/sbin/"
+	@/bin/chmod +x "/usr/local/sbin/axup"
+	@/bin/cp -f "axdown" "/usr/local/sbin"
+	@/bin/chmod +x "/usr/local/sbin/axdown"
 	@/bin/cp "ax25.default" "/etc/default/ax25"
-	@/bin/mkdir -p "/usr/share/kissinit"
-	@/bin/cp "kissinit/nordlink_1k2" "/usr/share/kissinit/"
-	@/bin/chmod +x "/usr/share/kissinit/nordlink_1k2"
-	@/bin/cp "kissinit/ej50u" "/usr/share/kissinit/"
-	@/bin/chmod +x "/usr/share/kissinit/ej50u"
+	@/bin/mkdir -p "/usr/local/share/kissinit"
+	@/bin/cp "kissinit/nordlink_1k2" "/usr/local/share/kissinit/"
+	@/bin/chmod +x "/usr/local/share/kissinit/nordlink_1k2"
+	@/bin/cp "kissinit/ej50u" "/usr/local/share/kissinit/"
+	@/bin/chmod +x "/usr/local/share/kissinit/ej50u"
 	@#
 	@systemctl daemon-reload
 	@systemctl enable ax25
@@ -28,9 +28,9 @@ uninstall:
 	@systemctl disable ax25
 	@systemctl daemon-reload
 	@/bin/rm "/etc/systemd/system/ax25.service"
-	@/bin/rm "/usr/sbin/axup"
-	@/bin/rm "/usr/sbin/axdown"
+	@/bin/rm "/usr/local/sbin/axup"
+	@/bin/rm "/usr/local/sbin/axdown"
 	@/bin/rm "/etc/default/ax25"
-	@/bin/rm -rf "/usr/share/kissinit/"
+	@/bin/rm -rf "/usr/local/share/kissinit/"
 	@echo " "
 	@echo "Uninstalled !"
