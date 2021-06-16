@@ -6,10 +6,10 @@ AXPORT=ax0
 # The AX.25 baudrate the TNC is configured for.
 # Make sure this matches the SERIAL setting of your TNC.
 # This is NOT the on-air baudrate, this is the serial baud-rate i.e. between computer and TNC
-#This value must match the value in /etc/ax25/axports
 SERIALSPEED=9600
 
 #the onair speed either 1200 or 9600
+#This value must match the value in /etc/ax25/axports
 HBAUD=1200
 
 # IP Address and netmask, in CIDR notation e.g. 192.168.123.45/24 for 192.168.123.45 with netmask 255.255.255.0.
